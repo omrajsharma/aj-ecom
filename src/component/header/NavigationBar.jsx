@@ -14,11 +14,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import {useSelector} from 'react-redux'
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
 function DrawerAppBar(props) {
+  const cartCount = useSelector(state => state.cartCount)
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -74,6 +78,11 @@ function DrawerAppBar(props) {
                 </Button>
               </Link>
             ))}
+            <Badge badgeContent={ cartCount > 0 ? cartCount : '0' } color="secondary">
+              <ShoppingCartIcon 
+                sx={{ color: '#fff', ml: 2 }}
+              />
+            </Badge>
           </Box>
         </Toolbar>
       </AppBar>

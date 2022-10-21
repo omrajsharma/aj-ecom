@@ -1,33 +1,19 @@
 import {
-    ADD_ONE_TO_COUNTER,
-    MINUS_ONE_FROM_COUNTER,
-    CUSTOM_ADD_COUNTER,
+    UPDATE_CART_COUNT
 } from './action'
 
 const initialState = {
-    counter: 0,
-    name: 'Acciojob',
-    age: 30,
-    address: '1234 Main St'
+    cartCount: 0,
 }
 
 function reducer(state = initialState, action){
     switch(action.type){
-        case ADD_ONE_TO_COUNTER:
+        case UPDATE_CART_COUNT:
             return {
                 ...state,
-                counter: state.counter + 1
+                cartCount: state.cartCount + 1
             }
-        case MINUS_ONE_FROM_COUNTER:
-            return {
-                ...state,
-                counter: state.counter - 1
-            }
-        case CUSTOM_ADD_COUNTER:
-            return {
-                ...state,
-                counter: state.counter + action.payload
-            }
+
         default:
             return state
     }
