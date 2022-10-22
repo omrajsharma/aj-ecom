@@ -1,0 +1,15 @@
+.smart-product-container{
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.smart-product-header{
+    font-size: 24px;
+    font-weight: 500;
+}
+.smart-product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
