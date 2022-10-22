@@ -1,22 +1,25 @@
 import React from 'react'
 import NavigationBar from './component/header/NavigationBar'
-import Carousel from './component/header/Carousel'
-import {useSelector, useDispatch} from 'react-redux'
-import SmartProduct from './component/products/SmartProduct'
+import NotFound from './component/pages/error/NotFound'
+import Cart from './component/pages/cart/Cart'
+import Home from './component/pages/home/Home'
+import ProductDetails from './component/pages/product/ProductDetails'
+
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
-
-  const dispatch = useDispatch()
-
 
   
   return (
     <div>
       <NavigationBar />
-      <Carousel /> 
-      <SmartProduct/>
-      
 
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/product/:id' element={<ProductDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
 
     </div>
   )

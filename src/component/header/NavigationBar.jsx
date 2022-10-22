@@ -33,7 +33,9 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        BookStash
+        <Link to="/">
+          BookStash
+        </Link>
       </Typography>
       <Divider />
       <List>
@@ -68,7 +70,9 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            BookStash
+            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+              BookStash
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -78,11 +82,13 @@ function DrawerAppBar(props) {
                 </Button>
               </Link>
             ))}
-            <Badge badgeContent={ cartCount > 0 ? cartCount : '0' } color="secondary">
-              <ShoppingCartIcon 
-                sx={{ color: '#fff', ml: 2 }}
-              />
-            </Badge>
+            <Link to="/cart">
+              <Badge badgeContent={ cartCount > 0 ? cartCount : '0' } color="secondary">
+                <ShoppingCartIcon 
+                  sx={{ color: '#fff', ml: 2 }}
+                />
+              </Badge>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

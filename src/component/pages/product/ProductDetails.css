@@ -1,0 +1,28 @@
+.product-detail-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px ;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+    border: 1px solid #e0e0e0;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    padding: 15px;
+}
+.product-detail-image img {
+    max-width: 300px;
+}
+.product-detail-new-price{
+    font-size: 28px;
+    font-weight: 600;
+}
+.product-detail-old-price{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #dcdcdc;
+}
